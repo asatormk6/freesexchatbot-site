@@ -1,0 +1,170 @@
+﻿<!--
+title: Free DIY Install - Free Sex Chat Bot
+-->
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Step-by-step guide to set up your own free AI sex chat bot offline with Oobabooga. No subscriptions. Total privacy." />
+    <title>Free DIY Install - Free Sex Chat Bot</title>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Fira+Mono&display=swap');
+
+      :root {
+        --accent: #00cc7a;
+        --accent-light: #99ffcc;
+        --blue: #00bfff;
+        --bg: #000;
+      }
+
+      html, body {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+        width: 100%;
+        font-family: 'Fira Mono', monospace;
+        background-color: var(--bg);
+        background-image:
+          radial-gradient(circle at center, rgba(0, 204, 122, 0.15) 0%, rgba(0, 204, 122, 0.06) 45%, rgba(0, 0, 0, 0.85) 100%);
+        background-size: cover;
+        background-repeat: no-repeat;
+        color: var(--accent-light);
+        overflow-x: hidden;
+        position: relative;
+      }
+
+      body::before {
+        content: '';
+        position: fixed;
+        inset: 0;
+        background-image: repeating-linear-gradient(
+          to bottom,
+          rgba(0, 204, 122, 0.015),
+          rgba(0, 204, 122, 0.015) 1px,
+          transparent 1px,
+          transparent 2px
+        );
+        animation: scanlines 1.5s linear infinite;
+        z-index: 0;
+        pointer-events: none;
+      }
+
+      @keyframes scanlines {
+        from { background-position-y: 0; }
+        to { background-position-y: 2px; }
+      }
+
+      .container {
+        position: relative;
+        z-index: 1;
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 2rem;
+        line-height: 1.6;
+      }
+
+      h1 {
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+        text-align: center;
+        color: var(--accent);
+        text-shadow: 0 0 8px #00cc7a66, 0 0 14px #00cc7a33;
+      }
+
+      h2 {
+        margin-top: 2rem;
+        color: var(--accent);
+        text-shadow: 0 0 6px #00cc7a44;
+      }
+
+      p {
+        text-shadow: 0 0 4px #00cc7a22;
+      }
+
+      code {
+        background-color: #112;
+        padding: 0.2rem 0.4rem;
+        border-radius: 4px;
+        color: #ffcc99;
+      }
+
+      pre {
+        background: #111;
+        padding: 1rem;
+        border-radius: 8px;
+        overflow-x: auto;
+        color: #ffcc99;
+      }
+
+      a {
+        color: var(--blue);
+        text-decoration: none;
+      }
+
+      a:hover {
+        text-decoration: underline;
+      }
+
+      .note {
+        font-style: italic;
+        color: #77bbaa;
+        margin-top: 0.5rem;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>🛠️ Free DIY Install</h1>
+
+      <p>Run your own AI chat bot locally. 100% private. 100% yours. Follow these steps:</p>
+
+      <h2>1. Download Oobabooga Web UI</h2>
+      <p>
+        Clone or download the web UI from the official repo:<br />
+        <a href="https://github.com/oobabooga/text-generation-webui" target="_blank">Oobabooga GitHub</a>
+      </p>
+      <p>Follow the <code>README</code> to install Python and required packages (like <code>torch</code>).</p>
+
+      <h2>2. Download the Model (GGUF Format)</h2>
+      <p>
+        We recommend: <strong>writing-roleplay-20k-context-nemo-12b-v1.0-gguf</strong><br />
+        Available here: <a href="https://huggingface.co/openerotica/writing-roleplay-20k-context-nemo-12b-v1.0-gguf" target="_blank">Hugging Face</a>
+      </p>
+      <div class="note">Choose a version like <code>Q4_K_M</code> or <code>Q5</code> depending on your GPU and RAM capacity.</div>
+
+      <h2>3. Place Model in GGUF Folder</h2>
+      <p>
+        Move the downloaded <code>.gguf</code> file to:<br />
+        <code>text-generation-webui/models/</code><br />
+        You can create a folder inside for organization if needed.
+      </p>
+
+      <h2>4. Launch the Web UI</h2>
+      <p>
+        Open a terminal in the Oobabooga folder and run:<br />
+        <pre>python server.py --model <i>your-folder-name</i></pre>
+      </p>
+      <p>Wait for it to load, then open <code>http://localhost:7860</code> in your browser.</p>
+
+      <h2>5. Start Chatting</h2>
+      <p>
+        You’re all set. The bot runs completely offline with full erotic roleplay support.<br />
+        No filters. No cloud. No limits.
+      </p>
+
+      <h2>Optional: Enable Extensions</h2>
+      <p>
+        Try adding features like long term memory, long-form generation, or character cards using Oobabooga extensions.<br />
+        See the Extensions tab in the UI for options.
+        (Guide coming soon)
+      </p>
+
+      <h2>Problems?</h2>
+      <p>
+        If something breaks, ask for help in the GitHub Discussions tab or check back here soon — we’re building a troubleshooting section.<br />
+        Or just <a href="/lazy">grab the $5 one-click installer</a> and be done.
+      </p>
+    </div>
+  </body>
+</html>
