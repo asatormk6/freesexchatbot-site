@@ -28,8 +28,7 @@ title: Free Sex Chat Bot - Offline AI Companion
         justify-content: center;
         align-items: center;
         background-color: var(--bg);
-        background-image:
-          radial-gradient(circle at center, rgba(0, 204, 122, 0.15) 0%, rgba(0, 204, 122, 0.06) 45%, rgba(0, 0, 0, 0.85) 100%);
+        background-image: radial-gradient(circle at center, rgba(0, 204, 122, 0.15) 0%, rgba(0, 204, 122, 0.06) 45%, rgba(0, 0, 0, 0.85) 100%);
         background-size: cover;
         background-repeat: no-repeat;
         color: var(--accent);
@@ -121,11 +120,18 @@ title: Free Sex Chat Bot - Offline AI Companion
 
       .buttons {
         display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1.2rem;
+        margin-top: 0.8rem;
+        margin-bottom: 1.2rem;
+      }
+
+      .button-row {
+        display: flex;
         gap: 1.2rem;
         flex-wrap: wrap;
         justify-content: center;
-        margin-top: 0.8rem;
-        margin-bottom: 1.2rem;
       }
 
       a.button {
@@ -194,7 +200,7 @@ title: Free Sex Chat Bot - Offline AI Companion
       }
 
       footer {
-        margin-top: 1.2rem;
+        margin-top: 2rem; /* restored spacing to match visual flow */
         font-size: 0.8rem;
         color: #00cc7a88;
         text-shadow: 0 0 4px #00cc7a44;
@@ -208,19 +214,20 @@ title: Free Sex Chat Bot - Offline AI Companion
         Offline, uncensored AI. No bullshit. No subscriptions.<br />
         <span class="mobile-hide">Self install or grab the lazy one-click version with long-term memory preconfigured for just $5.</span>
       </p>
-
       <div class="buttons">
-        <a class="button alt" href="free/">🛠️ Free DIY Install</a>
-        <a class="button" href="lazy/">💸 $5 One-Click Installer</a>
+        <div class="button-row">
+          <a class="button alt" href="free/">🛠️ Free DIY Install</a>
+          <a class="button" href="lazy/">💸 $5 One-Click Installer</a>
+        </div>
+        <a class="view-demo" id="viewDemo">View Demo Here</a>
       </div>
-
-      <a class="view-demo" id="viewDemo">View Demo Here</a>
 
       <footer>
         © 2025 FreeSexChatBot
       </footer>
     </main>
 
+    <!-- Popup Overlay -->
     <div class="overlay" id="overlay">
       <img src="AI.jpg" alt="AI Chat Demo" />
     </div>
