@@ -37,10 +37,15 @@ title: Free Sex Chat Bot - Offline AI Companion
         text-align: center;
       }
 
-      body::before {
+      body::before, body::after {
         content: '';
         position: absolute;
         inset: 0;
+        pointer-events: none;
+        z-index: 0;
+      }
+
+      body::before {
         background-image: repeating-linear-gradient(
           to bottom,
           rgba(0, 204, 122, 0.015),
@@ -49,14 +54,9 @@ title: Free Sex Chat Bot - Offline AI Companion
           transparent 2px
         );
         animation: scanlines 1.5s linear infinite;
-        z-index: 0;
-        pointer-events: none;
       }
 
       body::after {
-        content: '';
-        position: absolute;
-        inset: 0;
         background-image: repeating-linear-gradient(
           to bottom,
           rgba(255, 255, 255, 0.01),
@@ -64,8 +64,6 @@ title: Free Sex Chat Bot - Offline AI Companion
           transparent 1px,
           transparent 2px
         );
-        z-index: 0;
-        pointer-events: none;
       }
 
       @keyframes scanlines {
@@ -159,13 +157,40 @@ title: Free Sex Chat Bot - Offline AI Companion
         box-shadow: 0 0 10px #00bfff88;
       }
 
-      .screenshot {
-        max-width: 90%;
-        height: auto;
-        border: 2px solid #00cc7a44;
-        border-radius: 8px;
-        box-shadow: 0 0 20px #00cc7a22;
+      .view-demo {
         margin-top: 1rem;
+        padding: 0.3rem 0.9rem;
+        border: 2px solid var(--accent-light);
+        color: var(--accent-light);
+        font-size: 0.9rem;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: all 0.2s ease;
+        text-decoration: none;
+      }
+
+      .view-demo:hover {
+        background-color: var(--accent-light);
+        color: #000;
+        box-shadow: 0 0 6px #99ffcc88;
+      }
+
+      .overlay {
+        display: none;
+        position: fixed;
+        inset: 0;
+        background-color: rgba(0, 0, 0, 0.85);
+        justify-content: center;
+        align-items: center;
+        z-index: 10;
+      }
+
+      .overlay img {
+        max-width: 90%;
+        max-height: 90%;
+        border: 2px solid #00cc7a;
+        border-radius: 10px;
+        box-shadow: 0 0 20px #00cc7a88;
       }
 
       footer {
@@ -187,10 +212,39 @@ title: Free Sex Chat Bot - Offline AI Companion
         <a class="button alt" href="free/">🛠️ Free DIY Install</a>
         <a class="button" href="lazy/">💸 $5 One-Click Installer</a>
       </div>
-      <img src="./AI.jpg" alt="AI Chat Showcase" class="screenshot" />
+
+      <!-- View Demo Link -->
+      <a class="view-demo" id="viewDemo">View Demo Here</a>
+
       <footer>
         © 2025 FreeSexChatBot
       </footer>
     </main>
+
+    <!-- Popup Overlay -->
+    <div class="overlay" id="overlay">
+      <img src="./AI.jpg" alt="AI Chat Demo" />
+    </div>
+
+    <script>
+      const viewDemo = document.getElementById('viewDemo');
+      const overlay = document.getElementById('overlay');
+
+      viewDemo.addEventListener('click', () => {
+        overlay.style.display = 'flex';
+      });
+
+      overlay.addEventListener('click', (e) => {
+        if (e.target === overlay) {
+          overlay.style.display = 'none';
+        }
+      });
+
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+          overlay.style.display = 'none';
+        }
+      });
+    </script>
   </body>
 </html>
